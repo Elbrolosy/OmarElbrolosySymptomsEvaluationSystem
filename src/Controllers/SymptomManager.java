@@ -70,13 +70,18 @@ public class SymptomManager {
                     : totalDiff < 3 && severityScore >= 10 && severityScore < 15 ? OveralRatingType.Unsure
                     : OveralRatingType.Very_different;
         }
-        else{
+        // This code was used to handle the first game case by calculating the overall rating depending only on severity score
+        // but accoding to the project overview document, it shouldn't give any result so I commented it.
+        /*else{
             if (severityScore >= 10 && severityScore < 15)
                 res.overallRating = OveralRatingType.Unsure;
             else if (severityScore >= 15)
                 res.overallRating = OveralRatingType.Very_different;
             else
                 res.overallRating = OveralRatingType.No_difference;
+        }*/
+        else{
+            res.overallRating = OveralRatingType.None;
         }
         
         lastGame.symptomSum = res;
