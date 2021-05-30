@@ -57,9 +57,12 @@ public class SymptomMentoringSystem {
                     System.out.println("\u001B[33m" + "Take care :)" +
                         "\u001B[0m");
                 }
-                else{
+                else if (lastGame.symptomSum.overallRating == OveralRatingType.Very_different){
                     System.out.println("\u001B[31m" + "You are in danger :(" +
                         "\u001B[0m");
+                }
+                else{
+                    System.out.println("Not enough data provided!");
                 }
                 try{
                     System.out.println("Press enter to return to the main menu!");

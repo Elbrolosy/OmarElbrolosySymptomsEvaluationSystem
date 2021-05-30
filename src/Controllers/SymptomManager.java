@@ -65,18 +65,14 @@ public class SymptomManager {
         if (athleteGames.size() >= 2){
             Game previousLastGame = athleteGames.get(athleteGames.size()-2);
             int totalDiff = totalNumber - previousLastGame.symptomSum.getTotalNumber();
+            int severityDiff = severityScore - previousLastGame.symptomSum.getSeverityScore();
 
-            res.overallRating = totalDiff < 3 && severityScore < 10 ? OveralRatingType.No_difference
-                    : totalDiff < 3 && severityScore >= 10 && severityScore < 15 ? OveralRatingType.Unsure
+            res.overallRating = totalDiff < 3 && severityDiff < 10 ? OveralRatingType.No_difference
+                    : totalDiff < 3 && severityDiff >= 10 && severityDiff < 15 ? OveralRatingType.Unsure
                     : OveralRatingType.Very_different;
         }
         else{
-            if (severityScore >= 10 && severityScore < 15)
-                res.overallRating = OveralRatingType.Unsure;
-            else if (severityScore >= 15)
-                res.overallRating = OveralRatingType.Very_different;
-            else
-                res.overallRating = OveralRatingType.No_difference;
+            res.overallRating = OveralRatingType.None;
         }
         
         lastGame.symptomSum = res;

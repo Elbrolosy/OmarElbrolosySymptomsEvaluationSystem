@@ -12,5 +12,6 @@ package Entities;
 public enum OveralRatingType {
     No_difference,
     Very_different,
-    Unsure
+    Unsure,
+    None
 }

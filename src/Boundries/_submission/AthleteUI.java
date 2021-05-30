@@ -66,7 +66,7 @@ public class AthleteUI {
     
     public void DisplayAthleteGames(ArrayList<Game> games){
         for (int i=0; i<games.size(); i++) {
-            System.out.println("Game #" + (i+1) + "symptom : \n- " 
+            System.out.println("Game #" + (i+1) + " symptom : \n- " 
                 + "Total number of symptoms : " + games.get(i).symptomSum.getTotalNumber() + "\n- "
                 + "Severity score : " + games.get(i).symptomSum.getSeverityScore() + "\n- "
                 + "Overall rating : " + games.get(i).symptomSum.overallRating.name().replace("_", " "));
